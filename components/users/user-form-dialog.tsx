@@ -5,11 +5,11 @@ interface UserFormDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   user?: {
-    id: number
-    name: string
+    id: string
+    nombre: string
     email: string
     role: string
-    status: string
+    activo: boolean
   }
 }
 

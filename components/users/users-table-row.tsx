@@ -45,7 +45,17 @@ export function UsersTableRow({ user }: UsersTableRowProps) {
         </td>
       </tr>
 
-      <UserFormDialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen} user={user} />
+      <UserFormDialog
+        open={isEditDialogOpen}
+        onOpenChange={setIsEditDialogOpen}
+        user={{
+          id: String(user.id),
+          nombre: user.name,
+          email: user.email,
+          role: user.role,
+          activo: user.status === "active"
+        }}
+      />
     </>
   )
 }
